@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Website",
+    "image": "/images/400x400.png",
+    "description": "A personal portfolio website to showcase my projects and work experience.",
+    "skills": ["React", "Tailwind CSS", "JavaScript", "Node.js"]
+  },
+  {
+    "id": 2,
+    "title": "E-commerce Platform",
+    "image": "/images/400x400.png",
+    "description": "An e-commerce platform with user authentication, product management, and payment integration.",
+    "skills": ["React", "Express", "MongoDB", "Stripe"]
+  },
+  {
+    "id": 3,
+    "title": "E-commerce Platform",
+    "image": "/images/400x400.png",
+    "description": "An e-commerce platform with user authentication, product management, and payment integration.",
+    "skills": ["React", "Express", "MongoDB", "Stripe"]
+  },
+  {
+    "id": 4,
+    "title": "E-commerce Platform",
+    "image": "/images/400x400.png",
+    "description": "An e-commerce platform with user authentication, product management, and payment integration.",
+    "skills": ["React", "Express", "MongoDB", "Stripe"]
+  }
+]
