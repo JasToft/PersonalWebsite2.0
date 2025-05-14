@@ -10,19 +10,19 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <div id="home" className="pt-20 bg-white">
+      <div id="home" className="pt-20 bg-gray-50">
         <Home />
       </div>
-      <div id="about" className="pt-20 bg-white">
+      <div id="about" className="pt-20 bg-gray-50">
         <About />
       </div>
-      <div id="projects" className="pt-20 bg-white">
+      <div id="projects" className="pt-20 bg-gray-50">
         <Projects />
       </div>
-      <div id="experience" className="pt-20 bg-white">
+      <div id="experience" className="pt-20 bg-gray-50">
         <Experience />
       </div>
-      <div id="contact" className="pt-20 bg-white">
+      <div id="contact" className="pt-20 bg-gray-50">
         <Contact />
       </div>
     </div>

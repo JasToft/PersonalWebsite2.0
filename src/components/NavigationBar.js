@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import exoskeletonIcon from "../exoskeleton.png";
+
 
 const NavigationBar = () => {
   const [activeSection, setActiveSection] = useState("Home");
@@ -56,12 +58,24 @@ const NavigationBar = () => {
         isScrolled ? "bg-gray-50 shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-screen-lg mx-auto flex items-center justify-between px-4 py-5">
-        {/* Logo */}
-        <div className="text-2xl font-bold text-gray-800">John Cena</div>
+      <div className="max-w-screen-lg w-full flex items-center justify-between mx-auto py-4">
+        {/* Logo with Exoskeleton Icon */}
+        <div className="flex items-center space-x-1.5">
+          <div className="w-10 h-10 flex-shrink-0">
+            <img src={exoskeletonIcon} alt="Exoskeleton Icon" className="w-full h-full" />
+          </div>
+          <div className="leading-tight">
+            <div className="text-2xl font-bold text-gray-800">
+              John <span className="text-blue-600">Cena</span>
+            </div>
+            <div className="text-xs font-semibold text-gray-500">
+              BIOMEDICAL ENGINEER
+            </div>
+          </div>
+        </div>
 
         {/* Navigation Links */}
-        <div className="flex space-x-6">
+        <div className="flex space-x-8">
           {["Home", "About", "Projects", "Experience", "Contact"].map(
             (section) => (
               <button
@@ -70,9 +84,7 @@ const NavigationBar = () => {
                 onMouseEnter={() => setHoveredSection(section)}
                 onMouseLeave={() => setHoveredSection(null)}
                 className={`relative text-lg font-medium transition-colors duration-300 ${
-                  activeSection === section
-                    ? "text-blue-600"
-                    : "text-gray-800"
+                  activeSection === section ? "text-blue-600" : "text-gray-800"
                 }`}
               >
                 {section}
