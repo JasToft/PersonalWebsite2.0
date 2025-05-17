@@ -125,10 +125,10 @@ const ProjectGallery = ({ project, onClose }) => {
 
         {/* Gallery */}
         <div className="flex-grow flex items-center justify-center relative">
-          <div className="flex items-center justify-center w-full relative h-[60vh] gap-2">
+          <div className="flex items-center justify-center w-[75%] relative h-[60vh] mx-auto">
             {/* Previous Image */}
             <div
-              className={`transform cursor-pointer z-10 transition-all duration-300 opacity-50 scale-75 -mr-4 ${getAnimationClass(
+              className={`transform cursor-pointer z-10 transition-all duration-300 opacity-40 scale-90 -mr-6 ${getAnimationClass(
                 "prev"
               )}`}
               onClick={handlePrevImage}
@@ -136,7 +136,7 @@ const ProjectGallery = ({ project, onClose }) => {
               <img
                 src={images[getPrevIndex()]}
                 alt="Previous"
-                className="object-contain max-h-[40vh] w-auto"
+                className="object-contain max-h-[45vh] w-auto"
               />
             </div>
 
@@ -145,7 +145,7 @@ const ProjectGallery = ({ project, onClose }) => {
               className={`z-20 transition-all duration-300 flex justify-center items-center ${getAnimationClass(
                 "current"
               )}`}
-              style={{ width: "100%", height: "1100%" }}
+              style={{ width: "100%", height: "100%" }}
             >
               <img
                 src={images[currentImageIndex]}
@@ -156,15 +156,15 @@ const ProjectGallery = ({ project, onClose }) => {
 
             {/* Next Image */}
             <div
-              className={`transform cursor-pointer z-10 transition-all duration-300 opacity-50 scale-75 -mr-4 ${getAnimationClass(
-                "prev"
+              className={`transform cursor-pointer z-10 transition-all duration-300 opacity-40 scale-90 -ml-6 ${getAnimationClass(
+                "next"
               )}`}
-              onClick={handlePrevImage}
+              onClick={handleNextImage}
             >
               <img
-                src={images[getPrevIndex()]}
-                alt="Previous"
-                className="object-contain max-h-[40vh] w-auto"
+                src={images[getNextIndex()]}
+                alt="Next"
+                className="object-contain max-h-[45vh] w-auto"
               />
             </div>
           </div>
@@ -235,7 +235,7 @@ const ProjectGallery = ({ project, onClose }) => {
           </div>
         )}
 
-        {/* Text Section (Centered) */}
+        {/* Text Section */}
         <div className="mt-4 max-w-2xl mx-auto text-center">
           <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
           <p className="text-gray-600 mb-2">{description}</p>
