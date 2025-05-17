@@ -23,7 +23,7 @@ const ECGAnimation = () => {
           ref={pathRef}
           d="M0,70 L10,70 L15,50 L20,90 L25,70 L40,70 L45,60 L50,80 L55,70 L100,70"
           fill="none"
-          stroke="#3B82F6"
+          stroke="primary"
           strokeWidth="1"
           strokeDasharray={pathLength}
           strokeDashoffset={pathLength}

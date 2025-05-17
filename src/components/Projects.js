@@ -17,10 +17,10 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="projects px-4 bg-gray-50 py-16">
+    <div className="bg-background-light">
       {/* Title Section */}
       <div className="max-w-screen-lg mx-auto">
-        <h2 className="text-3xl font-bold text-left mb-8">Projects</h2>
+        <h2 className="text-3xl font-bold text-secondary-dark mb-8">Projects</h2>
       </div>
 
       {/* Projects Grid */}

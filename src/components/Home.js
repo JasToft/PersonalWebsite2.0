@@ -3,19 +3,19 @@ import React from "react";
 // Home Component - With adjusted padding to align with navbar
 const Home = () => {
   return (
-    <div id="home" className="pt-24 px-6 py-24 bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen flex items-center">
+    <div id="home" className="bg-background-light min-h-screen flex items-center pt-8">
       <div className="relative max-w-screen-lg mx-auto w-full">
         <div className="max-w-2xl">
           {/* Left-justified Content */}
-          <p className="text-lg text-blue-600 font-medium mb-3">
+          <p className="text-lg text-primary font-medium mb-3">
             Software Developer
           </p>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-            Hi, I'm <span className="text-blue-600">John Cena</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-secondary-dark mb-6">
+            Hi, I'm <span className="text-primary">John Cena</span>
           </h1>
 
-          <p className="text-xl text-gray-700 mb-10 max-w-xl">
+          <p className="text-xl text-secondary mb-10 max-w-xl">
             A student at Harvard University passionate about creating impactful
             software solutions.
           </p>
@@ -25,7 +25,7 @@ const Home = () => {
             {/* GitHub Icon */}
             <a
               href="#"
-              className="p-2 bg-gray-800 text-white rounded-full inline-flex items-center justify-center w-10 h-10 hover:bg-blue-600 transition-colors duration-300"
+              className="p-2 bg-secondary-dark text-background rounded-full inline-flex items-center justify-center w-10 h-10 hover:bg-primary transition-colors duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ const Home = () => {
             {/* LinkedIn Icon */}
             <a
               href="#"
-              className="p-2 bg-gray-800 text-white rounded-full inline-flex items-center justify-center w-10 h-10 hover:bg-blue-600 transition-colors duration-300"
+              className="p-2 bg-secondary-dark text-background rounded-full inline-flex items-center justify-center w-10 h-10 hover:bg-primary transition-colors duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ const Home = () => {
             {/* Email Icon */}
             <a
               href="#"
-              className="p-2 bg-gray-800 text-white rounded-full inline-flex items-center justify-center w-10 h-10 hover:bg-blue-600 transition-colors duration-300"
+              className="p-2 bg-secondary-dark text-background rounded-full inline-flex items-center justify-center w-10 h-10 hover:bg-primary transition-colors duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ const Home = () => {
               />
             </g>
           </svg>
-          
+
           {/* Adding animation styles */}
           <style jsx>{`
             @keyframes dash {

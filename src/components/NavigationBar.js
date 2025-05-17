@@ -53,12 +53,8 @@ const NavigationBar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
-        isScrolled ? "bg-gray-50 shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-screen-lg w-full flex items-center justify-between mx-auto py-4">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
+      <div className="max-w-screen-lg mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo with Exoskeleton Icon */}
         <div className="flex items-center space-x-1.5">
           <div className="w-10 h-10 flex-shrink-0">
@@ -84,7 +80,7 @@ const NavigationBar = () => {
                 onMouseEnter={() => setHoveredSection(section)}
                 onMouseLeave={() => setHoveredSection(null)}
                 className={`relative text-lg font-medium transition-colors duration-300 ${
-                  activeSection === section ? "text-blue-600" : "text-gray-800"
+                  activeSection === section ? "text-primary-dark" : "text-secondary-dark"
                 }`}
               >
                 {section}

@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <div id="home" className="pt-20 bg-gray-50">
+      <div id="home" className="pt-10 bg-gray-50">
         <Home />
       </div>
       <div id="about" className="pt-20 bg-gray-50">
