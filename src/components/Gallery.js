@@ -35,82 +35,13 @@ const ProjectGallery = ({ project, onClose }) => {
     }, 300);
   };
 
-  const getAnimationClass = (position) => {
-    if (!sliding) return "";
-
-    if (position === "current") {
-      return direction === "left"
-        ? "animate-gallery-slide-left-out"
-        : "animate-gallery-slide-right-out";
-    } else if (position === "prev") {
-      return direction === "right" ? "animate-gallery-slide-right-in" : "";
-    } else if (position === "next") {
-      return direction === "left" ? "animate-gallery-slide-left-in" : "";
-    }
-    return "";
-  };
+  const getAnimationClass = (position) => "";
 
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
-      <style jsx>{`
-        @keyframes gallerySlideLeftOut {
-          0% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translateX(-100%);
-            opacity: 0.5;
-          }
-        }
-        @keyframes gallerySlideRightOut {
-          0% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translateX(100%);
-            opacity: 0.5;
-          }
-        }
-        @keyframes gallerySlideLeftIn {
-          0% {
-            transform: translateX(100%);
-            opacity: 0.5;
-          }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        @keyframes gallerySlideRightIn {
-          0% {
-            transform: translateX(-100%);
-            opacity: 0.5;
-          }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-
-        .animate-gallery-slide-left-out {
-          animation: gallerySlideLeftOut 0.3s ease-in-out forwards;
-        }
-        .animate-gallery-slide-right-out {
-          animation: gallerySlideRightOut 0.3s ease-in-out forwards;
-        }
-        .animate-gallery-slide-left-in {
-          animation: gallerySlideLeftIn 0.3s ease-in-out forwards;
-        }
-        .animate-gallery-slide-right-in {
-          animation: gallerySlideRightIn 0.3s ease-in-out forwards;
-        }
-      `}</style>
-
       <div
         className="bg-white rounded-lg shadow-lg max-w-5xl w-full h-[90vh] p-4 relative flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
@@ -239,12 +170,12 @@ const ProjectGallery = ({ project, onClose }) => {
         <div className="mt-4 max-w-2xl mx-auto text-center">
           <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
           <p className="text-gray-600 mb-2">{description}</p>
-          <div className="flex justify-center flex-wrap mb-2">
+          <div className="flex justify-center flex-wrap mb-1">
             {skills &&
               skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="bg-blue-100 text-blue-800 text-xs font-medium mr-1 mb-1 px-2 py-0.5 rounded"
+                  className="bg-blue-500 text-white text-sm font-semibold mr-1 mb-1 px-3 py-1 rounded-lg shadow-sm"
                 >
                   {skill}
                 </span>

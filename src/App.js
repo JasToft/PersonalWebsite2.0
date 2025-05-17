@@ -13,7 +13,7 @@ function App() {
       <div id="home" className="pt-10 bg-gray-50">
         <Home />
       </div>
-      <div id="about" className="pt-20 bg-gray-50">
+      <div id="about" className="pt-10 bg-gray-50">
         <About />
       </div>
       <div id="projects" className="pt-20 bg-gray-50">

@@ -82,7 +82,7 @@ const ExperienceCard = ({ job, index, onShowPictures }) => {
   return (
     <div
       ref={cardRef}
-      className={`bg-white rounded-lg shadow-lg border border-gray-200 p-6 ${
+      className={`bg-white rounded-lg shadow-lg border border-gray-200 p-6 transition-transform duration-500 ease-in-out ${
         isVisible
           ? index % 2 === 0
             ? "opacity-100 translate-x-0"
@@ -105,7 +105,7 @@ const ExperienceCard = ({ job, index, onShowPictures }) => {
 
       <p className="text-secondary mb-4">{job.description}</p>
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center w-full">
         <button
           className="text-primary font-medium hover:underline"
           onClick={handleToggle}
@@ -115,7 +115,7 @@ const ExperienceCard = ({ job, index, onShowPictures }) => {
 
         {job.images && job.images.length > 0 && (
           <button
-            className="text-primary font-medium hover:underline ml-auto" // Used ml-auto to push it to the far right
+            className="text-primary font-medium hover:underline ml-auto"
             onClick={onShowPictures}
           >
             Show Pictures
