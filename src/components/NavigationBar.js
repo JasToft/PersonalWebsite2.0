@@ -54,7 +54,7 @@ const NavigationBar = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
-      <div className="max-w-screen-lg mx-auto flex items-center justify-between px-4 py-2">
+      <div className="max-w-screen-lg mx-auto flex items-center justify-between py-2">
         {/* Logo with Exoskeleton Icon */}
         <div className="flex items-center space-x-1.5">
           <div className="w-10 h-10 flex-shrink-0">

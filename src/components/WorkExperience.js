@@ -112,9 +112,9 @@ const ExperienceCard = ({ job, index, onShowPictures }) => {
           {showMore ? "Hide Details" : "Show Details"}
         </button>
 
-        {job.images && (
+        {job.images && job.images.length > 0 && (
           <button
-            className="text-primary font-medium hover:underline"
+            className="text-primary font-medium hover:underline ml-auto" // Used ml-auto to push it to the far right
             onClick={onShowPictures}
           >
             Show Pictures
