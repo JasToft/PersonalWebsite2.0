@@ -37,6 +37,7 @@ const Experience = () => {
         ))}
       </div>
 
+      {/* Popup */}
       {selectedExperience && (
         <ExperienceGallery
           experience={selectedExperience}
