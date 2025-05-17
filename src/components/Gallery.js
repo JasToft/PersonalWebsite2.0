@@ -10,14 +10,15 @@ const ProjectGallery = ({ project, onClose }) => {
     return null;
   }
 
-  const getPrevIndex = () => (currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1);
-  const getNextIndex = () => (currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1);
+  const getPrevIndex = () =>
+    currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
+  const getNextIndex = () =>
+    currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
 
   const handlePrevImage = () => {
     if (sliding) return;
     setDirection("right");
     setSliding(true);
-    
     setTimeout(() => {
       setCurrentImageIndex(getPrevIndex());
       setTimeout(() => setSliding(false), 300);
@@ -28,7 +29,6 @@ const ProjectGallery = ({ project, onClose }) => {
     if (sliding) return;
     setDirection("left");
     setSliding(true);
-    
     setTimeout(() => {
       setCurrentImageIndex(getNextIndex());
       setTimeout(() => setSliding(false), 300);
@@ -37,19 +37,15 @@ const ProjectGallery = ({ project, onClose }) => {
 
   const getAnimationClass = (position) => {
     if (!sliding) return "";
-    
+
     if (position === "current") {
-      return direction === "left" 
-        ? "animate-slide-left-out" 
-        : "animate-slide-right-out";
+      return direction === "left"
+        ? "animate-gallery-slide-left-out"
+        : "animate-gallery-slide-right-out";
     } else if (position === "prev") {
-      return direction === "right" 
-        ? "animate-slide-right-in" 
-        : "animate-slide-left-out-far";
+      return direction === "right" ? "animate-gallery-slide-right-in" : "";
     } else if (position === "next") {
-      return direction === "left" 
-        ? "animate-slide-left-in" 
-        : "animate-slide-right-out-far";
+      return direction === "left" ? "animate-gallery-slide-left-in" : "";
     }
     return "";
   };
@@ -58,54 +54,60 @@ const ProjectGallery = ({ project, onClose }) => {
     <div
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
       onClick={onClose}
-      style={{
-        "--slide-distance": "100px",
-        "--slide-time": "300ms"
-      }}
     >
       <style jsx>{`
-        @keyframes slideLeftOut {
-          from { transform: translateX(0) scale(1.5); opacity: 1; }
-          to { transform: translateX(calc(-1 * var(--slide-distance))) scale(1.5); opacity: 0; }
+        @keyframes gallerySlideLeftOut {
+          0% {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(-100%);
+            opacity: 0.5;
+          }
         }
-        @keyframes slideRightOut {
-          from { transform: translateX(0) scale(1.5); opacity: 1; }
-          to { transform: translateX(var(--slide-distance)) scale(1.5); opacity: 0; }
+        @keyframes gallerySlideRightOut {
+          0% {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(100%);
+            opacity: 0.5;
+          }
         }
-        @keyframes slideLeftIn {
-          from { transform: translateX(var(--slide-distance)) scale(1.5); opacity: 0; }
-          to { transform: translateX(0) scale(1.5); opacity: 1; }
+        @keyframes gallerySlideLeftIn {
+          0% {
+            transform: translateX(100%);
+            opacity: 0.5;
+          }
+          100% {
+            transform: translateX(0);
+            opacity: 1;
+          }
         }
-        @keyframes slideRightIn {
-          from { transform: translateX(calc(-1 * var(--slide-distance))) scale(1.5); opacity: 0; }
-          to { transform: translateX(0) scale(1.5); opacity: 1; }
+        @keyframes gallerySlideRightIn {
+          0% {
+            transform: translateX(-100%);
+            opacity: 0.5;
+          }
+          100% {
+            transform: translateX(0);
+            opacity: 1;
+          }
         }
-        @keyframes slideLeftOutFar {
-          from { transform: translateX(0) scale(0.7); opacity: 0.7; }
-          to { transform: translateX(calc(-2 * var(--slide-distance))) scale(0.7); opacity: 0; }
+
+        .animate-gallery-slide-left-out {
+          animation: gallerySlideLeftOut 0.3s ease-in-out forwards;
         }
-        @keyframes slideRightOutFar {
-          from { transform: translateX(0) scale(0.7); opacity: 0.7; }
-          to { transform: translateX(calc(2 * var(--slide-distance))) scale(0.7); opacity: 0; }
+        .animate-gallery-slide-right-out {
+          animation: gallerySlideRightOut 0.3s ease-in-out forwards;
         }
-        
-        .animate-slide-left-out {
-          animation: slideLeftOut var(--slide-time) ease-in-out forwards;
+        .animate-gallery-slide-left-in {
+          animation: gallerySlideLeftIn 0.3s ease-in-out forwards;
         }
-        .animate-slide-right-out {
-          animation: slideRightOut var(--slide-time) ease-in-out forwards;
-        }
-        .animate-slide-left-in {
-          animation: slideLeftIn var(--slide-time) ease-in-out forwards;
-        }
-        .animate-slide-right-in {
-          animation: slideRightIn var(--slide-time) ease-in-out forwards;
-        }
-        .animate-slide-left-out-far {
-          animation: slideLeftOutFar var(--slide-time) ease-in-out forwards;
-        }
-        .animate-slide-right-out-far {
-          animation: slideRightOutFar var(--slide-time) ease-in-out forwards;
+        .animate-gallery-slide-right-in {
+          animation: gallerySlideRightIn 0.3s ease-in-out forwards;
         }
       `}</style>
 
@@ -121,42 +123,53 @@ const ProjectGallery = ({ project, onClose }) => {
           &times;
         </button>
 
+        {/* Gallery */}
         <div className="flex-grow flex items-center justify-center relative">
-          <div className="flex items-center justify-center w-full relative h-[60vh]">
+          <div className="flex items-center justify-center w-full relative h-[60vh] gap-2">
             {/* Previous Image */}
-            <div 
-              className={`absolute transform scale-75 opacity-70 left-[10%] cursor-pointer z-10 ${getAnimationClass("prev")}`}
+            <div
+              className={`transform cursor-pointer z-10 transition-all duration-300 opacity-50 scale-75 -mr-4 ${getAnimationClass(
+                "prev"
+              )}`}
               onClick={handlePrevImage}
             >
               <img
                 src={images[getPrevIndex()]}
                 alt="Previous"
-                className="max-h-[40vh] max-w-[20vw] object-contain"
+                className="object-contain max-h-[40vh] w-auto"
               />
             </div>
 
             {/* Current Image */}
-            <div className={`flex items-center justify-center z-20 ${getAnimationClass("current")}`}>
+            <div
+              className={`z-20 transition-all duration-300 flex justify-center items-center ${getAnimationClass(
+                "current"
+              )}`}
+              style={{ width: "100%", height: "1100%" }}
+            >
               <img
                 src={images[currentImageIndex]}
                 alt={`Project Image ${currentImageIndex + 1}`}
-                className="max-h-[60vh] max-w-[30vw] object-contain transform scale-150"
+                className="object-contain transform scale-[1.8] transition-transform duration-300 max-h-[60vh]"
               />
             </div>
 
             {/* Next Image */}
-            <div 
-              className={`absolute transform scale-75 opacity-70 right-[10%] cursor-pointer z-10 ${getAnimationClass("next")}`}
-              onClick={handleNextImage}
+            <div
+              className={`transform cursor-pointer z-10 transition-all duration-300 opacity-50 scale-75 -mr-4 ${getAnimationClass(
+                "prev"
+              )}`}
+              onClick={handlePrevImage}
             >
               <img
-                src={images[getNextIndex()]}
-                alt="Next"
-                className="max-h-[40vh] max-w-[20vw] object-contain"
+                src={images[getPrevIndex()]}
+                alt="Previous"
+                className="object-contain max-h-[40vh] w-auto"
               />
             </div>
           </div>
 
+          {/* Arrows */}
           {images.length > 1 && (
             <>
               <button
@@ -206,15 +219,14 @@ const ProjectGallery = ({ project, onClose }) => {
           )}
         </div>
 
+        {/* Image dots */}
         {images.length > 1 && (
           <div className="flex justify-center gap-2 mt-6 mb-2">
             {images.map((_, index) => (
               <button
                 key={index}
                 className={`w-3 h-3 rounded-full ${
-                  index === currentImageIndex
-                    ? "bg-blue-500"
-                    : "bg-gray-300"
+                  index === currentImageIndex ? "bg-blue-500" : "bg-gray-300"
                 }`}
                 onClick={() => !sliding && setCurrentImageIndex(index)}
                 aria-label={`Go to image ${index + 1}`}
@@ -223,18 +235,20 @@ const ProjectGallery = ({ project, onClose }) => {
           </div>
         )}
 
-        <div className="mt-4 max-w-lg mx-auto">
+        {/* Text Section (Centered) */}
+        <div className="mt-4 max-w-2xl mx-auto text-center">
           <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
           <p className="text-gray-600 mb-2">{description}</p>
-          <div className="flex flex-wrap mb-2">
-            {skills && skills.map((skill, index) => (
-              <span 
-                key={index} 
-                className="bg-blue-100 text-blue-800 text-xs font-medium mr-1 mb-1 px-2 py-0.5 rounded"
-              >
-                {skill}
-              </span>
-            ))}
+          <div className="flex justify-center flex-wrap mb-2">
+            {skills &&
+              skills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-blue-100 text-blue-800 text-xs font-medium mr-1 mb-1 px-2 py-0.5 rounded"
+                >
+                  {skill}
+                </span>
+              ))}
           </div>
           <div className="text-gray-500 text-sm font-medium">{timePeriod}</div>
         </div>
