@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ExperienceGallery = ({ experience, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { images, timePeriod } = experience;
+  const { images, timePeriod, company, jobTitle, description } = experience;
 
   if (!images || !Array.isArray(images)) {
     return null; // Return null if images is undefined or not an array
@@ -37,10 +37,10 @@ const ExperienceGallery = ({ experience, onClose }) => {
           &times;
         </button>
 
-        <div className="flex-grow flex items-center justify-center relative overflow-hidden">
+        <div className="flex-grow flex flex-col items-center justify-start relative overflow-hidden">
           {images && images.length > 0 ? (
             <>
-              <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-2/3 flex items-center justify-center">
                 {images.length > 1 && (
                   <div
                     className="absolute left-48 h-full flex items-center opacity-70 z-10 cursor-pointer"
@@ -62,7 +62,7 @@ const ExperienceGallery = ({ experience, onClose }) => {
                   <img
                     src={images[currentImageIndex]}
                     alt={`Experience Image ${currentImageIndex + 1}`}
-                    className="max-w-6xl max-h-[70rem] object-contain transition-all duration-300"
+                    className="max-w-6xl max-h-[50rem] object-contain transition-all duration-300"
                   />
                 </div>
 
@@ -83,9 +83,10 @@ const ExperienceGallery = ({ experience, onClose }) => {
               {images.length > 1 && (
                 <>
                   <button
-                    className="absolute left-0 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-4 text-gray-800 z-30"
+                    className="absolute left-4 top-1/3 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-4 text-gray-800 z-30"
                     onClick={handlePrevImage}
                     aria-label="Previous image"
+                    style={{ top: "33%" }} // Adjusted slightly lower
                   >
                     <svg
                       className="w-16 h-16"
@@ -102,10 +103,12 @@ const ExperienceGallery = ({ experience, onClose }) => {
                       />
                     </svg>
                   </button>
+
                   <button
-                    className="absolute right-0 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-4 text-gray-800 z-30"
+                    className="absolute right-4 top-1/3 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-4 text-gray-800 z-30"
                     onClick={handleNextImage}
                     aria-label="Next image"
+                    style={{ top: "33%" }} // Adjusted slightly lower
                   >
                     <svg
                       className="w-16 h-16"
@@ -126,7 +129,7 @@ const ExperienceGallery = ({ experience, onClose }) => {
               )}
 
               {images.length > 1 && (
-                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                <div className="absolute top-[70%] left-0 right-0 flex justify-center gap-2">
                   {images.map((_, index) => (
                     <button
                       key={index}
@@ -149,10 +152,11 @@ const ExperienceGallery = ({ experience, onClose }) => {
           )}
         </div>
 
-        <div className="mt-6">
-          <div className="text-secondary text-sm font-medium text-center">
-            {timePeriod}
-          </div>
+        <div className="absolute bottom-10 left-6">
+          <h3 className="text-xl font-bold text-secondary-dark mb-1">{company}</h3>
+          <h4 className="text-lg font-medium text-primary mb-2">{jobTitle}</h4>
+          <p className="text-secondary mb-2">{description}</p>
+          <div className="text-secondary text-sm font-medium">{timePeriod}</div>
         </div>
       </div>
     </div>
