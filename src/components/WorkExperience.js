@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import ExperienceGallery from "./ExperienceGallery";
 
 const Experience = () => {
   const [experience, setExperience] = useState([]);
+  const [selectedExperience, setSelectedExperience] = useState(null);
 
-  // Fetch experience data from the backend API  
+  // Fetch experience data from the backend API
   useEffect(() => {
     fetch("/api/experience")
       .then((response) => {
@@ -15,7 +17,7 @@ const Experience = () => {
       .then((data) => setExperience(data))
       .catch((error) => console.error("Error fetching experiences:", error));
   }, []);
-  
+
   return (
     <div className="bg-background-light">
       {/* Title Section */}
@@ -26,14 +28,26 @@ const Experience = () => {
       {/* Experience Grid */}
       <div className="grid grid-cols-1 gap-6 max-w-screen-lg mx-auto">
         {experience.map((job, index) => (
-          <ExperienceCard key={job.id} job={job} index={index} />
+          <ExperienceCard
+            key={job.id}
+            job={job}
+            index={index}
+            onShowPictures={() => setSelectedExperience(job)}
+          />
         ))}
       </div>
+
+      {selectedExperience && (
+        <ExperienceGallery
+          experience={selectedExperience}
+          onClose={() => setSelectedExperience(null)}
+        />
+      )}
     </div>
   );
 };
 
-const ExperienceCard = ({ job, index }) => {
+const ExperienceCard = ({ job, index, onShowPictures }) => {
   const [showMore, setShowMore] = useState(false); // Default to collapsed
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef(null);
@@ -67,7 +81,7 @@ const ExperienceCard = ({ job, index }) => {
   return (
     <div
       ref={cardRef}
-      className={`bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-500 hover:scale-105 p-6 ${
+      className={`bg-white rounded-lg shadow-lg border border-gray-200 p-6 ${
         isVisible
           ? index % 2 === 0
             ? "opacity-100 translate-x-0"
@@ -83,19 +97,30 @@ const ExperienceCard = ({ job, index }) => {
           <h3 className="text-xl font-bold text-secondary-dark">{job.company}</h3>
           <h4 className="text-lg font-medium text-primary">{job.jobTitle}</h4>
         </div>
-        <div className="bg-primary-light text-primary-dark px-3 py-1 rounded-full text-sm font-medium">
-          {job.timePeriod}
+        <div className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-md">
+          {job.timePeriod || job.year}
         </div>
       </div>
 
       <p className="text-secondary mb-4">{job.description}</p>
 
-      <button
-        className="text-primary font-medium hover:underline"
-        onClick={handleToggle}
-      >
-        {showMore ? "Hide Details" : "Show Details"}
-      </button>
+      <div className="flex items-center space-x-4">
+        <button
+          className="text-primary font-medium hover:underline"
+          onClick={handleToggle}
+        >
+          {showMore ? "Hide Details" : "Show Details"}
+        </button>
+
+        {job.images && (
+          <button
+            className="text-primary font-medium hover:underline"
+            onClick={onShowPictures}
+          >
+            Show Pictures
+          </button>
+        )}
+      </div>
 
       {showMore && (
         <div className="mt-4 border-t pt-4">

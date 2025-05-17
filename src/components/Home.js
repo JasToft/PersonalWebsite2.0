@@ -102,7 +102,7 @@ const Home = () => {
                 strokeDasharray="1000"
                 strokeDashoffset="1000"
                 style={{
-                  animation: "dash 12s linear infinite",
+                  animation: "dash 8s linear infinite",
                 }}
               />
             </g>

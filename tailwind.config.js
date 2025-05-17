@@ -9,7 +9,6 @@ module.exports = {
         primary: {
           DEFAULT: '#3B82F6', // Blue
           light: '#60A5FA',
-          lightest: '#CFFAFE', // Slightly lighter than before
           dark: '#2563EB',
         },
         secondary: {
@@ -20,6 +19,7 @@ module.exports = {
         background: {
           DEFAULT: '#FFFFFF', // White
           light: '#F9FAFB',
+          medium: '#E5E7EB',
           dark: '#F3F4F6',
         },
         accent: {

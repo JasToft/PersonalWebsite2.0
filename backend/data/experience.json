@@ -1,37 +1,45 @@
 [
-    {
-      "id": 1,
-      "jobTitle": "Clinical Assistant",
-      "company": "Thompson Medical Center",
-      "timePeriod": "Jul - Aug 2023",
-      "description":
-        "Interacting with medical equipment and patients, and conducting research projects.",
-      "bulletPoints": ["Point 1", "Point 2", "Point 3"]
-    },
-    {
-      "id": 2,
-      "jobTitle": "Software Developer Intern",
-      "company": "atVenu",
-      "year": "Spring 2024",
-      "description":
-        "Creating sales reporting software using Ruby on Rails and SQL.",
-      "bulletPoints": ["Point 1", "Point 2", "Point 3"]
-    },
-    {
-      "id": 3,
-      "jobTitle": "Research Assistant",
-      "company": "University of Waterloo - Motion Research Group",
-      "year": "Fall 2025",
-      "description": "Data acquisition, prototyping, and 3D-printing.",
-      "bulletPoints": ["Point 1", "Point 2", "Point 3"]
-    },
-    {
-      "id": 4,
-      "jobTitle": "Software Developer Intern / Medical Assistant",
-      "company": "Guelph Eye MD",
-      "year": "Winter 2025",
-      "description":
-        "Fullstack software development, IT support, and medical assistance in a medical clinic.",
-      "bulletPoints": ["Point 1", "Point 2", "Point 3"]
-    }
+  {
+    "id": 1,
+    "jobTitle": "Clinical Assistant",
+    "company": "Thompson Medical Center",
+    "timePeriod": "Jul - Aug 2023",
+    "description": "Interacting with medical equipment and patients, and conducting research projects.",
+    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "images": []
+  },
+  {
+    "id": 2,
+    "jobTitle": "Software Developer Intern",
+    "company": "atVenu",
+    "year": "May - Aug 2024",
+    "description": "Creating sales reporting software using Ruby on Rails and SQL.",
+    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "images": []
+  },
+  {
+    "id": 3,
+    "jobTitle": "Research Assistant",
+    "company": "University of Waterloo - Motion Research Group",
+    "year": "Sep - Jan 2025-26",
+    "description": "Data acquisition, prototyping, and 3D-printing.",
+    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "images": [
+      "/images/400x400.png",
+      "/images/400x400.png",
+      "/images/400x400.png",
+      "/images/400x400.png",
+      "/images/400x400.png",
+      "/images/400x400.png"
+    ]
+  },
+  {
+    "id": 4,
+    "jobTitle": "Software Developer Intern / Medical Assistant",
+    "company": "Guelph Eye MD",
+    "year": "Jan-Apr 2025",
+    "description": "Fullstack software development, IT support, and medical assistance in a medical clinic.",
+    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "images": []
+  }
 ]
