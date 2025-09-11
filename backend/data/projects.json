@@ -7,8 +7,8 @@
     "skills": ["Mechanical Design", "Electronic Design", "AutoDesk Fusion", "3D-Printing", "Laser Cutting", "Arduino"],
     "timePeriod": "May 2025 - Present",
     "images": [
-      "http://localhost:3000/images/projects/Prosthetic Arm/Prosthetic.jpg",
-      "http://localhost:3000/images/projects/Prosthetic Arm/Gripper.png"
+      "http://jasontoft.com/images/projects/Prosthetic Arm/Prosthetic.jpg",
+      "http://jasontoft.com/images/projects/Prosthetic Arm/Gripper.png"
     ]
   },
   {
@@ -34,9 +34,9 @@
     "skills": ["SolidWorks", "SolidWorks Composer", "3D-Printing"],
     "timePeriod": "Jul - Aug 2023",
     "images": [
-      "http://localhost:3000/images/projects/kharl/assembledowl.png",
-      "http://localhost:3000/images/projects/kharl/disassembledowl.png",
-      "http://localhost:3000/images/projects/kharl/owlmechanism.png"
+      "http://jasontoft.com/images/projects/kharl/assembledowl.png",
+      "http://jasontoft.com/images/projects/kharl/disassembledowl.png",
+      "http://jasontoft.com/images/projects/kharl/owlmechanism.png"
     ]
   },
   {
@@ -47,9 +47,9 @@
     "skills": ["SolidWorks"],
     "timePeriod": "Jul - Aug 2023",
     "images": [
-      "http://localhost:3000/images/projects/helicopter/helifront.png",
-      "http://localhost:3000/images/projects/helicopter/heliexplodeandbom.png",
-      "http://localhost:3000/images/projects/helicopter/heliside.png"
+      "http://jasontoft.com/images/projects/helicopter/helifront.png",
+      "http://jasontoft.com/images/projects/helicopter/heliexplodeandbom.png",
+      "http://jasontoft.com/images/projects/helicopter/heliside.png"
     ]
   },
   {
@@ -60,8 +60,8 @@
     "skills": ["User Needs Assessment", "Design", "Engineering Analysis"],
     "timePeriod": "Jul - Aug 2023",
     "images": [
-      "http://localhost:3000/images/projects/stepNgo/stepngo.png",
-      "http://localhost:3000/images/projects/stepNgo/infographic.png"
+      "http://jasontoft.com/images/projects/stepNgo/stepngo.png",
+      "http://jasontoft.com/images/projects/stepNgo/infographic.png"
     ]
   },
    {
@@ -72,7 +72,7 @@
     "skills": ["C++", "OOP", "MS Excel"],
     "timePeriod": "Jul - Aug 2023",
     "images": [
-      "http://localhost:3000/images/projects/amode/ultrasounddata.png"
+      "http://jasontoft.com/images/projects/amode/ultrasounddata.png"
     ]
   }
 ]
