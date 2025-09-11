@@ -10,10 +10,19 @@ const ProjectGallery = ({ project, onClose }) => {
     return null;
   }
 
+  // Helper to check if a file is a video
+  const isVideo = (src) => /\.(mp4|mov|webm|ogg)$/i.test(src);
+
   const getPrevIndex = () =>
     currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
   const getNextIndex = () =>
     currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
+
+  const handleClose = () => {
+    if (onClose && typeof onClose === 'function') {
+      onClose();
+    }
+  };
 
   const handlePrevImage = () => {
     if (sliding) return;
@@ -40,18 +49,22 @@ const ProjectGallery = ({ project, onClose }) => {
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-      onClick={onClose}
+      onClick={handleClose}
     >
       <div
         className="bg-white rounded-lg shadow-lg max-w-5xl w-full h-[90vh] p-4 relative flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-4 right-4 text-gray-700 hover:text-blue-500 text-3xl font-extrabold bg-transparent border-none focus:outline-none cursor-pointer transition-colors duration-200"
-          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-700 hover:text-blue-500 text-3xl font-extrabold bg-transparent border-none focus:outline-none cursor-pointer transition-colors duration-200 z-40"
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleClose();
+          }}
           aria-label="Close"
         >
-          &times;
+          ×
         </button>
 
         {/* Gallery */}
@@ -64,11 +77,21 @@ const ProjectGallery = ({ project, onClose }) => {
               )}`}
               onClick={handlePrevImage}
             >
-              <img
-                src={images[getPrevIndex()]}
-                alt="Previous"
-                className="object-contain max-h-[45vh] w-auto"
-              />
+              <div className="bg-white flex items-center justify-center w-[45vh] h-[45vh] border border-black">
+                {isVideo(images[getPrevIndex()]) ? (
+                  <video
+                    src={images[getPrevIndex()]}
+                    controls
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <img
+                    src={images[getPrevIndex()]}
+                    alt="Previous"
+                    className="w-full h-full object-contain"
+                  />
+                )}
+              </div>
             </div>
 
             {/* Current Image */}
@@ -78,11 +101,22 @@ const ProjectGallery = ({ project, onClose }) => {
               )}`}
               style={{ width: "100%", height: "100%" }}
             >
-              <img
-                src={images[currentImageIndex]}
-                alt={`Project Image ${currentImageIndex + 1}`}
-                className="object-contain transform scale-[1.8] transition-transform duration-300 max-h-[60vh]"
-              />
+              <div className="bg-white flex items-center justify-center w-[60vh] h-[60vh] border border-black">
+                {isVideo(images[currentImageIndex]) ? (
+                  <video
+                    src={images[currentImageIndex]}
+                    controls
+                    autoPlay
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <img
+                    src={images[currentImageIndex]}
+                    alt={`Project Image ${currentImageIndex + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                )}
+              </div>
             </div>
 
             {/* Next Image */}
@@ -92,11 +126,21 @@ const ProjectGallery = ({ project, onClose }) => {
               )}`}
               onClick={handleNextImage}
             >
-              <img
-                src={images[getNextIndex()]}
-                alt="Next"
-                className="object-contain max-h-[45vh] w-auto"
-              />
+              <div className="bg-white flex items-center justify-center w-[45vh] h-[45vh] border border-black">
+                {isVideo(images[getNextIndex()]) ? (
+                  <video
+                    src={images[getNextIndex()]}
+                    controls
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <img
+                    src={images[getNextIndex()]}
+                    alt="Next"
+                    className="w-full h-full object-contain"
+                  />
+                )}
+              </div>
             </div>
           </div>
 

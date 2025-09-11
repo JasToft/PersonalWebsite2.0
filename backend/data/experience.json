@@ -1,20 +1,28 @@
 [
   {
     "id": 1,
-    "jobTitle": "Clinical Assistant",
-    "company": "Thompson Medical Center",
-    "timePeriod": "Jul - Aug 2023",
-    "description": "Interacting with medical equipment and patients, and conducting research projects.",
-    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "jobTitle": "Research Assistant",
+    "company": "University of Waterloo - Neuromechanics and Assistive Robotics Lab",
+    "year": "May 2025 - Present",
+    "description": "EMG data processing, organization, and analysis for lower-limb exoskeleton balancing experiments.",
+    "bulletPoints": [
+      "Developed a complete EMG data analysis and visualization pipeline in MATLAB for 300+ trials over 10 subjects",
+      "Built a MATLAB program to quantify muscle co-contraction for joint stiffness during participant balancing",
+      "Conducted experimental testing and MATLAB analysis to calculate the centre of mass of irregular objects"
+    ],
     "images": []
   },
   {
     "id": 2,
-    "jobTitle": "Software Developer Intern",
-    "company": "atVenu",
-    "year": "May - Aug 2024",
-    "description": "Creating sales reporting software using Ruby on Rails and SQL.",
-    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "jobTitle": "Software Developer Intern / Medical Assistant",
+    "company": "Guelph Eye MD",
+    "year": "Jan-Apr 2025",
+    "description": "Fullstack software development, IT support, and medical assistance in a medical clinic.",
+    "bulletPoints": [
+      "Co-developed a full-stack proprietary application using JavaScript and Go to optimize patient pathways, focusing on managing patient transitions between clinical stations", 
+      "Implemented key features, including automated taxi requests, button animations, waiting room transitions, and event logging", 
+      "Provided clinical support by performing diagnostic eye tests and engaging directly with patients"
+    ],
     "images": []
   },
   {
@@ -23,7 +31,10 @@
     "company": "University of Waterloo - Motion Research Group",
     "year": "Sep - Jan 2025-26",
     "description": "Data acquisition, prototyping, and 3D-printing.",
-    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "bulletPoints": [
+      "Prototyped, designed, and 3D printed test bench parts for exoskeleton motor testing, supporting energy regeneration evaluation", 
+      "Set up a PXI DAQ system with LabVIEW to collect input voltage data for performance analysis"
+    ],
     "images": [
       "/images/400x400.png",
       "/images/400x400.png",
@@ -35,11 +46,55 @@
   },
   {
     "id": 4,
-    "jobTitle": "Software Developer Intern / Medical Assistant",
-    "company": "Guelph Eye MD",
-    "year": "Jan-Apr 2025",
-    "description": "Fullstack software development, IT support, and medical assistance in a medical clinic.",
-    "bulletPoints": ["Point 1", "Point 2", "Point 3"],
+    "jobTitle": "Hardware Team Member",
+    "company": "UW BioMechatronics Design Team",
+    "timePeriod": "Sep 2023 - Dec 2024",
+    "description": "Designing a biosleeve with EMGs for a wearable hand exoskeleton.",
+    "bulletPoints": [
+      "Designing a biosleeve that monitors biometric signals using conductive fabric, EMGs, and Arduino", 
+      "Created a custom 3D-printed case to contain the electronic components using SolidWorks"
+    ],
+    "images": []
+  },
+  {
+    "id": 5,
+    "jobTitle": "Software Developer Intern",
+    "company": "atVenu",
+    "year": "May - Aug 2024",
+    "description": "Creating sales reporting software using Ruby on Rails and SQL.",
+    "bulletPoints": [
+      "Developed sales reporting apps using Ruby on Rails and SQL to enhance long-term data visualization and facilitate business decisions", 
+      "Created a refund data reporting tool with Ruby on Rails and SQL, gaining insight into customer habits", 
+      "Automated code generation from Google Sheets data using JavaScript, eliminating manual entry errors and increasing efficiency by 10-fold"
+    ],
+    "images": []
+  },
+  {
+    "id": 6,
+    "jobTitle": "OpenAir Team Member",
+    "company": "UW Engineers Without Borders Canada",
+    "timePeriod": "Sep 2023 - Apr 2024",
+    "description": "Designing a novel carbon capture device.",
+    "bulletPoints": [
+      "Testing and calibrating rate of flow sensors using Arduino", 
+      "Laser cutting acrylic flanges from an AutoCAD file", 
+      "Programming a multiplexer to consolidate Arduino signals from a carbon capture device",
+      "Creating a BOM and performing a complete life cycle analysis of the system using SimaPro"
+    ],
+    "images": []
+  },
+  {
+    "id": 7,
+    "jobTitle": "Clinical Assistant",
+    "company": "Thompson Medical Center",
+    "timePeriod": "Jul - Aug 2023",
+    "description": "Interacting with medical equipment and patients, and conducting research projects.",
+    "bulletPoints": [
+      "Assisted physician by guiding 20+ patients daily to examination rooms and performing intake history in Accuro", 
+      "Prepared dermatology surgical trays, drew up syringes of local anesthetic and sterilized tools with an autoclave", 
+      "Performed medical office clerical work and prepared examination rooms",
+      "Researched and created patient information displays for sun safety and skin cancer using Google Docs"
+    ],
     "images": []
   }
 ]

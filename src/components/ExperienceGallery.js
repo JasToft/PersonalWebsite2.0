@@ -13,6 +13,12 @@ const ExperienceGallery = ({ experience, onClose }) => {
   const getPrevIndex = () => (currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1);
   const getNextIndex = () => (currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1);
 
+  const handleClose = () => {
+    if (onClose && typeof onClose === 'function') {
+      onClose();
+    }
+  };
+
   const handlePrevImage = () => {
     if (sliding) return;
     setDirection("right");
@@ -40,18 +46,21 @@ const ExperienceGallery = ({ experience, onClose }) => {
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-      onClick={onClose}
+      onClick={handleClose}
     >
       <div
         className="bg-white rounded-lg shadow-lg max-w-5xl w-full h-[90vh] p-4 relative flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-4 right-4 text-gray-700 hover:text-blue-500 text-3xl font-extrabold bg-transparent border-none focus:outline-none cursor-pointer transition-colors duration-200"
-          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-700 hover:text-red-500 text-3xl font-extrabold bg-transparent border-none focus:outline-none cursor-pointer transition-colors duration-200 z-40"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleClose();
+          }}
           aria-label="Close"
         >
-          &times;
+          ×
         </button>
 
         {/* Gallery */}
@@ -160,8 +169,7 @@ const ExperienceGallery = ({ experience, onClose }) => {
                   index === currentImageIndex ? "bg-blue-500" : "bg-gray-300"
                 }`}
                 onClick={() => !sliding && setCurrentImageIndex(index)}
-                aria-label={`Go to image ${index + 1}`
-                }
+                aria-label={`Go to image ${index + 1}`}
               />
             ))}
           </div>

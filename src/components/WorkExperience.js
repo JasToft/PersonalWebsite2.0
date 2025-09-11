@@ -125,7 +125,7 @@ const ExperienceCard = ({ job, index, onShowPictures }) => {
 
       {showMore && (
         <div className="mt-4 border-t pt-4">
-          <ul className="list-disc list-inside space-y-2">
+          <ul className="list-disc list-inside">
             {job.bulletPoints.map((point, index) => (
               <li key={index} className="text-secondary">
                 {point}

@@ -89,12 +89,14 @@ const ProjectCard = ({ project, index, onClick }) => {
       }`} // Reduced duration to 200ms for a more immediate animation
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Project Image */}
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-64 object-cover rounded-md mb-3"
-      />
+      {/* Project Image - Square container with centered, fitted image */}
+      <div className="w-full h-64 bg-white rounded-md mb-3 flex items-center justify-center overflow-hidden">
+        <img
+          src={project.images[0]}
+          alt={project.title}
+          className="w-full h-full object-contain"
+        />
+      </div>
 
       {/* Project Title */}
       <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import exoskeletonIcon from "../exoskeleton.png";
+import exoskeletonIcon from "../exoLogo.png";
+
 
 
 const NavigationBar = () => {
@@ -56,13 +57,13 @@ const NavigationBar = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
       <div className="max-w-screen-lg mx-auto flex items-center justify-between py-2">
         {/* Logo with Exoskeleton Icon */}
-        <div className="flex items-center space-x-1.5">
-          <div className="w-10 h-10 flex-shrink-0">
+        <div className="flex items-center space-x-1">
+          <div className="w-12 h-13 flex-shrink-0 mt-2">
             <img src={exoskeletonIcon} alt="Exoskeleton Icon" className="w-full h-full" />
           </div>
-          <div className="leading-tight">
+          <div className="leading-none">
             <div className="text-2xl font-bold text-gray-800">
-              John <span className="text-blue-600">Cena</span>
+              Jason <span className="text-blue-600">Toft</span>
             </div>
             <div className="text-xs font-semibold text-gray-500">
               BIOMEDICAL ENGINEER

@@ -1,28 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Portfolio Website",
+    "title": "Prosthetic Arm",
     "image": "/images/400x400.png",
-    "description": "A personal portfolio website to showcase my projects and work experience.",
-    "skills": ["React", "Tailwind CSS", "JavaScript", "Node.js"],
-    "timePeriod": "Jul - Aug 2023",
+    "description": "A bottle-opening prosethetic arm using a motor, passive gripper, EMGs, and filtering circuitry.",
+    "skills": ["Mechanical Design", "Electronic Design", "AutoDesk Fusion", "3D-Printing", "Laser Cutting", "Arduino"],
+    "timePeriod": "May 2025 - Present",
     "images": [
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png"
+      "http://localhost:3000/images/projects/Prosthetic Arm/Prosthetic.jpg",
+      "http://localhost:3000/images/projects/Prosthetic Arm/Gripper.png"
     ]
   },
   {
     "id": 2,
-    "title": "E-commerce Platform",
+    "title": "Food Pal - In Progress",
     "image": "/images/400x400.png",
-    "description": "An e-commerce platform with user authentication, product management, and payment integration.",
-    "skills": ["React", "Express", "MongoDB", "Stripe"],
+    "description": "A full-stack (MERN) application for food expiration tracking, recording grocery lists, and analyzing food consumption.",
+    "skills": ["MongoDB", "Express", "React", "Node.js", "JavaScript"],
     "timePeriod": "Jul - Aug 2023",
     "images": [
+      "/images/400x400.png",
+      "/images/400x400.png",
       "/images/400x400.png",
       "/images/400x400.png",
       "/images/400x400.png"
@@ -30,28 +28,51 @@
   },
   {
     "id": 3,
-    "title": "E-commerce Platform",
+    "title": "Kharl the Great Horned Owl",
     "image": "/images/400x400.png",
-    "description": "An e-commerce platform with user authentication, product management, and payment integration.",
-    "skills": ["React", "Express", "MongoDB", "Stripe"],
+    "description": "Meet Kharl the 3D printed, SolidWorks-designed, Great Horned Owl! His 9 unique parts and moving mechanism allow the flapping of his wings when his head is rotated.",
+    "skills": ["SolidWorks", "SolidWorks Composer", "3D-Printing"],
     "timePeriod": "Jul - Aug 2023",
     "images": [
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png"
+      "http://localhost:3000/images/projects/kharl/assembledowl.png",
+      "http://localhost:3000/images/projects/kharl/disassembledowl.png",
+      "http://localhost:3000/images/projects/kharl/owlmechanism.png"
     ]
   },
   {
     "id": 4,
-    "title": "E-commerce Platform",
+    "title": "SolidWorks Helicopter",
     "image": "/images/400x400.png",
-    "description": "An e-commerce platform with user authentication, product management, and payment integration.",
-    "skills": ["React", "Express", "MongoDB", "Stripe"],
+    "description": "A 9-part SolidWorks assembly with a section view, BOM, and exploded diagram.",
+    "skills": ["SolidWorks"],
     "timePeriod": "Jul - Aug 2023",
     "images": [
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png"
+      "http://localhost:3000/images/projects/helicopter/helifront.png",
+      "http://localhost:3000/images/projects/helicopter/heliexplodeandbom.png",
+      "http://localhost:3000/images/projects/helicopter/heliside.png"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Step N' Go",
+    "image": "/images/400x400.png",
+    "description": "An accessible hands-free door opener for individuals with carpal tunnel syndrome.",
+    "skills": ["User Needs Assessment", "Design", "Engineering Analysis"],
+    "timePeriod": "Jul - Aug 2023",
+    "images": [
+      "http://localhost:3000/images/projects/stepNgo/stepngo.png",
+      "http://localhost:3000/images/projects/stepNgo/infographic.png"
+    ]
+  },
+   {
+    "id": 6,
+    "title": "aMode",
+    "image": "/images/400x400.png",
+    "description": "An object-oriented program that takes in ultrasound data and outputs a csv file of manipulated data.",
+    "skills": ["C++", "OOP", "MS Excel"],
+    "timePeriod": "Jul - Aug 2023",
+    "images": [
+      "http://localhost:3000/images/projects/amode/ultrasounddata.png"
     ]
   }
 ]

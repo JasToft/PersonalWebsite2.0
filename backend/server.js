@@ -37,6 +37,9 @@ app.get("/api/experience", (req, res) => {
   });
 });
 
+// Images API
+app.use("/images", express.static(path.join(__dirname, "images")));
+
 // Server setup
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
