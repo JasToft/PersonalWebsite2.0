@@ -1,22 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ProjectGallery from "./Gallery";
+import projectsData from '../data/projects.json';
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
+  // Use the imported data directly
   const [selectedProject, setSelectedProject] = useState(null);
-
-  // Fetch projects data from the backend API
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch projects data");
-        }
-        return response.json();
-      })
-      .then((data) => setProjects(data))
-      .catch((error) => console.error("Error fetching projects:", error));
-  }, []);
 
   const closePopup = () => {
     setSelectedProject(null);
@@ -31,7 +19,7 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-lg mx-auto">
-        {projects.map((project, index) => (
+        {projectsData.map((project, index) => (
           <ProjectCard
             key={project.id}
             project={project}

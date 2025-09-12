@@ -1,22 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ExperienceGallery from "./ExperienceGallery";
+import experienceData from '../data/experience.json';
 
 const Experience = () => {
-  const [experience, setExperience] = useState([]);
   const [selectedExperience, setSelectedExperience] = useState(null);
-
-  // Fetch experience data from the backend API
-  useEffect(() => {
-    fetch("/api/experience")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch experience data");
-        }
-        return response.json();
-      })
-      .then((data) => setExperience(data))
-      .catch((error) => console.error("Error fetching experiences:", error));
-  }, []);
 
   return (
     <div className="bg-background-light">
@@ -27,7 +14,7 @@ const Experience = () => {
 
       {/* Experience Grid */}
       <div className="grid grid-cols-1 gap-6 max-w-screen-lg mx-auto">
-        {experience.map((job, index) => (
+        {experienceData.map((job, index) => (
           <ExperienceCard
             key={job.id}
             job={job}
