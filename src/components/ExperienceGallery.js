@@ -74,7 +74,7 @@ const ExperienceGallery = ({ experience, onClose }) => {
               onClick={handlePrevImage}
             >
               <img
-                src={images[getPrevIndex()]}
+                src={process.env.PUBLIC_URL + images[getPrevIndex()]}
                 alt="Previous"
                 className="object-contain max-h-[45vh] w-auto"
               />
@@ -88,7 +88,7 @@ const ExperienceGallery = ({ experience, onClose }) => {
               style={{ width: "100%", height: "100%" }}
             >
               <img
-                src={images[currentImageIndex]}
+                src={process.env.PUBLIC_URL + images[currentImageIndex]}
                 alt={`Experience Image ${currentImageIndex + 1}`}
                 className="object-contain transform scale-[1.8] transition-transform duration-300 max-h-[60vh]"
               />
@@ -102,7 +102,7 @@ const ExperienceGallery = ({ experience, onClose }) => {
               onClick={handleNextImage}
             >
               <img
-                src={images[getNextIndex()]}
+                src={process.env.PUBLIC_URL + images[getNextIndex()]}
                 alt="Next"
                 className="object-contain max-h-[45vh] w-auto"
               />

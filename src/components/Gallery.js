@@ -80,13 +80,13 @@ const ProjectGallery = ({ project, onClose }) => {
               <div className="bg-white flex items-center justify-center w-[45vh] h-[45vh] border border-black">
                 {isVideo(images[getPrevIndex()]) ? (
                   <video
-                    src={images[getPrevIndex()]}
+                    src={process.env.PUBLIC_URL + images[getPrevIndex()]}
                     controls
                     className="w-full h-full object-contain"
                   />
                 ) : (
                   <img
-                    src={images[getPrevIndex()]}
+                    src={process.env.PUBLIC_URL + images[getPrevIndex()]}
                     alt="Previous"
                     className="w-full h-full object-contain"
                   />
@@ -104,14 +104,14 @@ const ProjectGallery = ({ project, onClose }) => {
               <div className="bg-white flex items-center justify-center w-[60vh] h-[60vh] border border-black">
                 {isVideo(images[currentImageIndex]) ? (
                   <video
-                    src={images[currentImageIndex]}
+                    src={process.env.PUBLIC_URL + images[currentImageIndex]}
                     controls
                     autoPlay
                     className="w-full h-full object-contain"
                   />
                 ) : (
                   <img
-                    src={images[currentImageIndex]}
+                    src={process.env.PUBLIC_URL + images[currentImageIndex]}
                     alt={`Project Image ${currentImageIndex + 1}`}
                     className="w-full h-full object-contain"
                   />
@@ -129,13 +129,13 @@ const ProjectGallery = ({ project, onClose }) => {
               <div className="bg-white flex items-center justify-center w-[45vh] h-[45vh] border border-black">
                 {isVideo(images[getNextIndex()]) ? (
                   <video
-                    src={images[getNextIndex()]}
+                    src={process.env.PUBLIC_URL + images[getNextIndex()]}
                     controls
                     className="w-full h-full object-contain"
                   />
                 ) : (
                   <img
-                    src={images[getNextIndex()]}
+                    src={process.env.PUBLIC_URL + images[getNextIndex()]}
                     alt="Next"
                     className="w-full h-full object-contain"
                   />
