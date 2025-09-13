@@ -35,14 +35,7 @@
       "Prototyped, designed, and 3D printed test bench parts for exoskeleton motor testing, supporting energy regeneration evaluation", 
       "Set up a PXI DAQ system with LabVIEW to collect input voltage data for performance analysis"
     ],
-    "images": [
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png",
-      "/images/400x400.png"
-    ]
+    "images": []
   },
   {
     "id": 4,
