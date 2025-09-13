@@ -7,8 +7,8 @@
     "skills": ["Mechanical Design", "Electronic Design", "AutoDesk Fusion", "3D-Printing", "Laser Cutting", "Arduino"],
     "timePeriod": "May 2025 - Present",
     "images": [
-      "/images/projects/Prosthetic Arm/Prosthetic.jpg",
-      "/images/projects/Prosthetic Arm/Gripper.png"
+      "../images/projects/Prosthetic Arm/Prosthetic.jpg",
+      "../images/projects/Prosthetic Arm/Gripper.png"
     ]
   },
   {
