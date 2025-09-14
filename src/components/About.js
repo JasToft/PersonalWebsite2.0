@@ -11,7 +11,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-secondary mb-6">
-           Hi, I'm Jason Toft, a second-year biomedical engineering student. My journey into biomedical engineering began with 
+           Hi, I'm Jason Toft, a third-year biomedical engineering student. My journey into biomedical engineering began with 
            a fascination for how the human body works and a desire to make a long-lasting impact on people’s lives through science and design. 
            I've always been drawn to math and biology, and biomedical engineering seemed like the perfect blend of both worlds: 
            applying engineering concepts to solve problems in healthcare.
