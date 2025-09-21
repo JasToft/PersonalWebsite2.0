@@ -13,6 +13,28 @@
   },
   {
     "id": 2,
+    "title": "Breadboard Box",
+    "description": "A machined box for organizing and protecting electronic components.",
+    "skills": ["Machining", "Laser Cutting"],
+    "timePeriod": "May 2025",
+    "images": [
+      "/images/projects/box/box.png"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Grashoff Mechanisms",
+    "description": "Learning about Grashoff's Law and the different types of four-bar linkages.",
+    "skills": ["Mechanical Design", "AutoDesk Fusion"],
+    "timePeriod": "May 2025",
+    "images": [
+      "/images/projects/grashoff linkage/Part2Pic.png",
+      "/images/projects/grashoff linkage/Part 1.mp4",
+      "/images/projects/grashoff linkage/Part 2.mp4"
+    ]
+  },  
+  {
+    "id": 2,
     "title": "Food Pal - In Progress",
     "image": "/images/400x400.png",
     "description": "A full-stack (MERN) application for food expiration tracking, recording grocery lists, and analyzing food consumption.",
